@@ -1,0 +1,104 @@
+.profile-page {
+    padding: 40px 60px;
+    min-height: 70vh;
+}
+
+.profile-page h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.profile-page p {
+    color: #555;
+}
+
+.content {
+    display: flex;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+/* table don hang */
+
+.order {
+    flex: 3;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.order table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order th {
+    border: 1px solid #ddd;
+    font-weight: 600;
+    padding: 14px;
+    text-align: center;
+    font-size: 14px;
+    background-color: #ddd;
+}
+
+.order td {
+    padding: 14px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.order tr {
+    transition: 0.2s;
+}
+
+/* account card */
+.account-infor {
+    flex: 1;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+.account-infor p:first-child {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* button */
+.account-infor button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.account-infor button:first-of-type {
+    background-color: #2d8cf0;
+    color: white;
+}
+
+.account-infor button:first-of-type:hover {
+    background-color: #1a73e8;
+}
+
+.account-infor button:last-of-type {
+    background-color: #f5f5f5;
+    color: black;
+}
+
+.account-infor button:last-of-type:hover {
+    background-color: #e0e0e0;
+}
+
+@media (max-width: 992px) {
+    .content {
+        flex-direction: column;
+    }
+}
+

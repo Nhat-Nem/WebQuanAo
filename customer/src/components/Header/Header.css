@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 90px;
+    background: #f5f5f5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.8);
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* .logo img {
+    height: 70px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+} */
+
+.logo img {
+    height: 100%;
+    max-height: 80px;
+    width: auto;
+}
+
+/* MENu */
+.navi {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.navi > a {
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.navi > a::after {
+    color: #d80027;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: #d80027;
+    transition: width 0.3s ease;
+}
+
+.navi > a:hover::after {
+    width: 100%;
+}
+
+.navi > a:hover {
+    color: #d80027;
+}
+
+/* right */
+.right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* cai l nay la cgi v */
+.tim-kiem {
+    position: relative;
+}
+
+.tim-kiem > input {
+    padding: 8px 35px 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background-color: white;
+    color: black;
+}
+
+.tim-kiem > i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+}
+
+/* nay la l gi nua v */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 18px;
+    color: black;
+}
+
+.cart  {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart > a {
+    color: black;
+}
+
+.cart > span {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 2px 6px;
+}
+
+@media (max-width: 768px) {
+    .navi {
+        display: none;
+    }
+}

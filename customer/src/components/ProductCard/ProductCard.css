@@ -1,0 +1,86 @@
+.product-card {
+  width: 280px;
+  padding: 20px;
+  background: white;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.product-card:hover::after {
+  width: 100%;
+}
+
+/* Ảnh */
+.product-img {
+  overflow: hidden;
+  height: 300px;
+}
+
+.product-img img {
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Tên sản phẩm */
+.product-name {
+  color: black;
+  margin: 15px 0 10px;
+  font-size: 15px;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.product-name a {
+  color: black;  
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line hover */
+.product-name::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background: black;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.product-name:hover::after {
+  width: 100%;
+}
+
+/* Giá */
+.product-price {
+  font-weight: bold;
+  color: black;
+  margin-bottom: 15px;
+}
+
+/* Button */
+.add-btn {
+  padding: 8px 16px;
+  border: 1px solid black;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: black;
+}
+
+.add-btn:hover {
+  background: black;
+  color: white;
+}

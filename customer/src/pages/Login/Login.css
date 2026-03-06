@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+}
+
+.login-page {
+    margin: 0;
+    height: 100vh;
+    background-image: url("../../assets/Login page img.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+/* Card */
+.login-box {
+    width: 380px;
+    padding: 45px 40px;
+    background: #ffffff;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Logo */
+.login-box img {
+    width: 180px;
+    margin: 0 auto;
+}
+
+/* Title */
+.login-page h2 {
+    text-align: center;
+    margin: 0;
+}
+
+/* Form */
+.login-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Label + input group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Label */
+.login-page label {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Input */
+.login-page input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 13px 18px;
+    border: 2px solid #C4C4C4;
+    border-radius: 25px;
+    background-color: #f3f3f3;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+    color: black;
+}
+
+.login-page input:focus {
+    border-color: #EA454C;
+    background: #ffffff;
+}
+
+/* Remember + forgot */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.remember-me input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+
+.forgot-password {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.forgot-password:hover {
+    color: #EA454C;
+}
+
+/* Button */
+.login-page button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: #EA454C;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-page button:hover {
+    background: #d63a40;
+}
+
+/* register para */
+.registerpara {
+    text-align: center;
+}
+
+.registerpara a {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+
+.registerpara a:hover {
+    color: #EA454C;
+}
