@@ -1,0 +1,11 @@
+.admin-layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.outlet {
+    flex: 1;
+    overflow-y: auto;
+    background: #f4f6f9;
+}

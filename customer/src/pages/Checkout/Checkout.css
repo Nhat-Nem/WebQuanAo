@@ -1,0 +1,339 @@
+*{
+    box-sizing:border-box;
+}
+
+/* page */
+
+.checkout-page{
+    display:flex;
+    max-width:1200px;
+    margin:auto;
+    padding:40px;
+    gap:40px;
+
+    align-items:flex-start;
+}
+
+/*  div trai  */
+
+.left{
+    flex:2;
+
+    background:#ffffff;
+    padding:30px;
+
+    border-radius:12px;
+
+    box-shadow:0 6px 20px rgba(0,0,0,0.06);
+}
+
+.left h2{
+    margin-bottom:20px;
+    text-align:center;
+
+    font-size:22px;
+    font-weight:600;
+}
+
+/* select */
+
+.left select{
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:20px;
+
+    border:1px solid #ddd;
+    border-radius:8px;
+
+    background:#f9fafb;
+
+    color: black;
+
+    font-size:14px;
+
+    transition:0.2s;
+}
+
+.left select:focus{
+    outline:none;
+    border-color:#2b7de9;
+    box-shadow:0 0 0 2px rgba(43,125,233,0.15);
+}
+
+/* input */
+
+.left input[type="text"]{
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:14px;
+
+    color: black;
+
+    border:1px solid #ddd;
+    border-radius:8px;
+
+    background:#fafafa;
+
+    font-size:14px;
+
+    transition:0.2s;
+}
+
+.left input:focus{
+    outline:none;
+
+    border-color:#2b7de9;
+
+    box-shadow:0 0 0 2px rgba(43,125,233,0.15);
+}
+
+/*  thanh toan  */
+
+.payment-box{
+    margin-top:25px;
+
+    border:1px solid #eee;
+    border-radius:10px;
+
+    overflow:hidden;
+
+    background:#fafafa;
+}
+
+.payment-box h2{
+    padding:16px;
+
+    font-size:18px;
+    text-align:center;
+
+    border-bottom:1px solid #eee;
+
+    background:#fff;
+}
+
+/* option */
+
+.payment-option{
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px 18px;
+
+    cursor:pointer;
+
+    border-bottom:1px solid #eee;
+
+    font-size:14px;
+
+    transition:0.2s;
+}
+
+.payment-option:hover{
+    background:#f3f7ff;
+}
+
+.payment-option:last-child{
+    border-bottom:none;
+}
+
+/* radio */
+
+.payment-option input{
+    cursor:pointer;
+}
+
+/*  div phai  */
+
+.checkout-page .right{
+    flex:1;
+
+    background:#ffffff;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    box-shadow:0 6px 20px rgba(0,0,0,0.06);
+
+    display:flex;
+    flex-direction:column;
+}
+
+/* title */
+
+.right h2{
+    font-size:20px;
+    font-weight:600;
+
+    margin-bottom:20px;
+}
+
+/*  prod  */
+
+.order-product{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:1px solid #eee;
+}
+
+.order-product:last-child{
+    border-bottom:none;
+}
+
+/* product info */
+
+.order-product .product-info{
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+}
+
+/* image */
+
+.order-product img{
+    width:65px;
+    height:65px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+    background:#eee;
+}
+
+/* product text */
+
+.order-product p{
+    margin:0;
+
+    font-size:14px;
+    font-weight:500;
+}
+
+.order-product small{
+    color:#777;
+    font-size:12px;
+}
+
+/*  size  */
+
+.checkout-size{
+    display:block;
+
+    font-size:12px;
+    color:#777;
+
+    margin-top:3px;
+}
+
+/*  tong  */
+
+.summary{
+    margin-top:20px;
+
+    border-top:1px solid #eee;
+
+    padding-top:20px;
+}
+
+/* row */
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:12px;
+
+    font-size:14px;
+}
+
+.summary-row span:last-child{
+    font-weight:500;
+}
+
+/* total */
+
+.summary-row.total{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border-top:1px solid #eee;
+
+    margin-top:10px;
+    padding-top:14px;
+
+    font-size:18px;
+    font-weight:700;
+
+    margin-right:10px;
+
+    color:#2b7de9;
+}
+
+/*  button  */
+
+.order-btn{
+    width:100%;
+
+    margin-top:20px;
+
+    padding:14px;
+
+    background:#2b7de9;
+
+    color:white;
+
+    border:none;
+    border-radius:10px;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+.order-btn:hover{
+    background:#1e5fd6;
+}
+
+.order-btn:active{
+    transform:scale(0.98);
+}
+
+/*  animation  */
+
+@media (max-width:900px){
+
+.checkout-page{
+    flex-direction:column;
+    padding:20px;
+}
+
+.right{
+    order:-1;
+}
+
+}
+
+.summary-row.total span:first-child{
+    margin-right:auto;
+}
+
+.summary-row.total span:last-child{
+    margin-left:10px;
+}
