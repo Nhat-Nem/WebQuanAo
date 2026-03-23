@@ -1,0 +1,330 @@
+*{
+    box-sizing:border-box;
+}
+
+/*  page  */
+
+.order-page{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+}
+
+.order-page h3{
+    margin-bottom:20px;
+    font-size:22px;
+    font-weight:600;
+}
+
+/*  filter  */
+
+.filter{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+
+    margin-bottom:25px;
+    padding:16px 20px;
+
+    background:#fff;
+    border-radius:10px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* select + input */
+
+.filter select,
+.filter input{
+    padding:8px 12px;
+    border-radius:6px;
+    border:1px solid #ddd;
+    font-size:14px;
+
+    transition:0.2s;
+}
+
+.filter select:focus,
+.filter input:focus{
+    outline:none;
+    border-color:#007bff;
+}
+
+/* search */
+
+.filter input[type="text"]{
+    margin-left:auto;
+    width:230px;
+}
+
+/* reset button */
+
+.filter button{
+    padding:8px 14px;
+
+    border:none;
+    border-radius:6px;
+
+    background:#f1f1f1;
+    cursor:pointer;
+
+    font-size:13px;
+    transition:0.2s;
+}
+
+.filter button:hover{
+    background:#e4e4e4;
+}
+
+/*  table  */
+
+.order-wrapper{
+    overflow-x:auto;
+}
+
+.order-page table{
+    width:100%;
+    border-collapse:collapse;
+
+    background:#fff;
+
+    border-radius:10px;
+    overflow:hidden;
+
+    box-shadow:0 3px 12px rgba(0,0,0,0.05);
+}
+
+/* header */
+
+.order-page thead{
+    background:#111;
+    color:#fff;
+}
+
+.order-page th{
+    padding:14px;
+    text-align:center;
+    font-weight:500;
+    font-size:14px;
+}
+
+/* body */
+
+.order-page td{
+    padding:14px;
+    text-align:center;
+
+    border-bottom:1px solid #eee;
+
+    font-size:14px;
+}
+
+/* zebra row */
+
+.order-page tbody tr:nth-child(even){
+    background:#fafafa;
+}
+
+/* hover row */
+
+.order-page tbody tr:hover{
+    background:#f1f6ff;
+    transition:0.2s;
+}
+
+/*  row  */
+
+.order-row{
+    cursor:pointer;
+    user-select:none;
+}
+
+/*  badfge  */
+
+.badge{
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+    font-weight:600;
+}
+
+/* pending */
+
+.badge.pending{
+    background:#fff3cd;
+    color:#856404;
+}
+
+/* confirmed */
+
+.badge.confirmed{
+    background:#cce5ff;
+    color:#004085;
+}
+
+/* shipping */
+
+.badge.shipping{
+    background:#e2d9f3;
+    color:#4b2c7a;
+}
+
+/* completed */
+
+.badge.completed{
+    background:#d4edda;
+    color:#155724;
+}
+
+/* cancelled */
+
+.badge.cancelled{
+    background:#f8d7da;
+    color:#721c24;
+}
+
+/* locked */
+.locked-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+
+    padding:6px 14px;
+
+    border-radius:999px;
+
+    font-size:12px;
+    font-weight:600;
+
+    border:1px solid transparent;
+
+    letter-spacing:0.3px;
+}
+
+/* completed  */
+.locked-pill.completed{
+    background:rgba(40,167,69,0.08);
+    color:#28a745;
+    font-weight: 700;
+    border-color:rgba(40,167,69,0.3);
+}
+
+/* cancelled  */
+.locked-pill.cancelled{
+    background:rgba(231,76,60,0.08);
+    color:#e74c3c;
+    font-weight: 700;
+    border-color:rgba(231,76,60,0.3);
+}
+
+/*   status  */
+
+.order-page select{
+    padding:6px 10px;
+
+    border-radius:6px;
+    border:1px solid #ddd;
+
+    font-size:13px;
+
+    background:#fff;
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+.order-page select:hover{
+    border-color:#007bff;
+}
+
+.order-page select:focus{
+    outline:none;
+
+    border-color:#007bff;
+
+    box-shadow:0 0 0 2px rgba(0,123,255,0.15);
+}
+
+/*  ordere detail   */
+
+.order-detail{
+    background:#f9fbff;
+}
+
+.order-detail-row{
+    padding:15px 10px;
+}
+
+/* product item */
+
+.detail-item{
+    display:flex;
+    align-items:center;
+
+    gap:15px;
+
+    padding:12px 0;
+
+    justify-content:center;
+
+    border-bottom:1px solid #eee;
+}
+
+.detail-item:last-child{
+    border-bottom:none;
+}
+
+/* product image */
+
+.detail-img{
+    width:64px;
+    height:64px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+    border:1px solid #eee;
+}
+
+/* product info */
+
+.detail-info{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+/* product name */
+
+.detail-name{
+    font-weight:600;
+    font-size:15px;
+}
+
+/* meta */
+
+.detail-meta{
+    font-size:13px;
+    color:#777;
+
+    display:flex;
+    gap:20px;
+}
+
+/*  count  */
+
+.order-count{
+    margin-top:12px;
+
+    text-align:center;
+
+    color:#666;
+    font-size:14px;
+}

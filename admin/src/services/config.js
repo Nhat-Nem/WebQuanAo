@@ -1,0 +1,1 @@
+export const ADMIN_URL = 'http://localhost:5174/'

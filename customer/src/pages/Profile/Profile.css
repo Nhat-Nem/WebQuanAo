@@ -1,0 +1,340 @@
+.profile-page{
+    padding:50px 80px;
+    min-height:70vh;
+    background:#f7f8fb;
+}
+
+/* title */
+
+.profile-page h3{
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+.profile-page p{
+    color:#666;
+}
+
+/* layout */
+
+.content{
+    display:flex;
+    gap:35px;
+    margin-top:30px;
+}
+
+/* ORDER CARD */
+
+.order{
+    flex:3;
+    background:white;
+
+    padding:25px;
+    border-radius:14px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+}
+
+/* filter */
+
+.order-filter{
+    display:flex;
+    justify-content:flex-end;
+    margin-bottom:18px;
+}
+
+/* select */
+
+.order-filter select{
+    padding:9px 14px;
+    border-radius:8px;
+    border:1px solid #ddd;
+
+    font-size:14px;
+
+    background:white;
+    color:#333;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.order-filter select:hover{
+    border-color:#aaa;
+}
+
+.order-filter select:focus{
+    border-color:#000 ;
+    box-shadow:0 0 0 2px rgba(234,69,76,0.15);
+    outline: none;
+}
+
+/* TABLE */
+
+.order table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+/* header */
+
+.order th{
+    padding:14px;
+
+    font-size:13px;
+    font-weight:600;
+
+    color:#555;
+
+    background:#f3f4f6;
+
+    text-align:center;
+}
+
+/* row */
+
+.order td{
+    padding:14px;
+    text-align:center;
+    font-size:14px;
+}
+
+/* divider */
+
+.order tbody tr{
+    border-top:1px solid #eee;
+    transition:.2s;
+}
+
+/* hover */
+
+.order tbody tr:hover{
+    background:#fafafa;
+    transform:scale(1.01);
+}
+
+/* STATUS BADGE */
+
+.profile-page .status{
+    padding:6px 12px;
+    border-radius:20px;
+
+    font-size:12px;
+    font-weight:600;
+
+    display:inline-block;
+}
+
+/* pending */
+
+.profile-page .status.pending{
+    background:#fff3cd;
+    color:#856404;
+}
+
+/* confirmed */
+
+.profile-page .status.confirmed{
+    background:#d6ecff;
+    color:#004085;
+}
+
+/* shipping */
+
+.profile-page .status.shipping{
+    background:#e9e0ff;
+    color:#4b2c7a;
+}
+
+/* completed */
+
+.profile-page .status.completed{
+    background:#d4edda;
+    color:#155724;
+}
+
+/* cancelled */
+
+.profile-page .status.cancelled{
+    background:#f8d7da;
+    color:#721c24;
+}
+
+/* ACCOUNT CARD */
+
+.account-infor{
+    flex:1;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:14px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+
+    height:fit-content;
+}
+
+/* title */
+
+.account-infor p:first-child{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+/* name */
+
+.account-infor p:nth-child(2){
+    margin-bottom:10px;
+}
+
+/* BUTTON */
+
+.account-infor button{
+    width:100%;
+    padding:11px;
+
+    margin-top:10px;
+
+    border:none;
+    border-radius:8px;
+
+    font-size:14px;
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+/* address */
+
+.account-infor button:nth-of-type(1){
+    background:black;
+    color:white;
+}
+
+.account-infor button:nth-of-type(1):hover{
+    background:#333;
+}
+
+/* admin */
+
+.account-infor button:nth-of-type(2){
+    background:#2d8cf0;
+    color:white;
+}
+
+.account-infor button:nth-of-type(2):hover{
+    background:#1a73e8;
+}
+
+/* logout */
+
+.account-infor button:last-of-type{
+    background:#f1f1f1;
+    color:#333;
+}
+
+.account-infor button:last-of-type:hover{
+    background:#e4e4e4;
+}
+
+/* chuyen trang */
+
+.profile-page .pagination{
+    margin-top:20px;
+}
+
+/* admin activity */
+.admin-activity{
+    flex:3;
+    background:white;
+
+    padding:25px;
+    border-radius:16px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.07);
+}
+
+/* title */
+.admin-activity p{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+/* list */
+.admin-activity ul {
+    list-style: none;
+    padding: 0;
+    margin-top:15px;
+}
+
+/* item */
+.admin-activity li {
+    display:flex;
+    flex-direction:column;
+
+    padding:14px 16px;
+    margin-bottom:10px;
+
+    border-radius:10px;
+    background:#f9fafb;
+
+    border:1px solid #eee;
+
+    transition:.25s;
+}
+
+/* hover effect */
+.admin-activity li:hover{
+    background:#fff;
+    transform:translateY(-2px);
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* message */
+.admin-activity li span{
+    font-size:14px;
+    font-weight:500;
+    color:#333;
+}
+
+/* time */
+.admin-activity small {
+    margin-top:5px;
+    color:#888;
+    font-size:12px;
+}
+
+/* order */
+.admin-activity li.order {
+    border-left:4px solid #2d8cf0; 
+}
+
+/* user */
+.admin-activity li.user {
+    border-left:4px solid #28a745;
+}
+
+/* product */
+.admin-activity li.product {
+    border-left:4px solid #f39c12;
+}
+
+/* animation */
+
+@media (max-width:992px){
+
+    .profile-page{
+        padding:40px 25px;
+    }
+
+    .content{
+        flex-direction:column;
+    }
+}

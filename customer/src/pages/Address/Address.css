@@ -1,0 +1,267 @@
+.address-page{
+    padding:50px 80px;
+    min-height:100vh;
+    background:#f7f8fb;
+}
+
+/* title */
+
+.address-page h3{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+/* action buttons */
+
+.action-btn{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:30px;
+}
+
+.action-btn button{
+    padding:10px 18px;
+
+    border:none;
+    border-radius:8px;
+
+    background: black;
+    color:white;
+
+    font-size:14px;
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.action-btn button:hover{
+    background:#333;
+}
+
+/* second button */
+
+.action-btn button:last-child{
+    background:#444;
+}
+
+.action-btn button:last-child:hover{
+    background:#333;
+}
+
+/* FORM CARD */
+
+.address-info{
+    width:720px;
+
+    margin:0 auto 40px;
+
+    padding:35px;
+
+    border-radius:14px;
+
+    background:white;
+
+    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.address-info h3{
+    margin-bottom:15px;
+}
+
+/* label */
+
+.address-info label{
+    font-size:14px;
+    font-weight:500;
+}
+
+/* input */
+
+.address-info input[type="text"]{
+    padding:12px;
+
+    border-radius:8px;
+    border:1px solid #ddd;
+
+    font-size:14px;
+
+    color: black;
+
+    background:#fafafa;
+
+    transition:.2s;
+}
+
+.address-info input:focus{
+    outline:none;
+
+    border-color:#EA454C;
+
+    background:white;
+
+    box-shadow:0 0 0 2px rgba(234,69,76,0.15);
+}
+
+/* required */
+
+.required{
+    color:#EA454C;
+}
+
+/* checkbox */
+
+.address-info input[type="checkbox"]{
+    margin-right:6px;
+}
+
+/* form buttons */
+
+.form-action{
+    margin-top:20px;
+
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+}
+
+.btn-add{
+    padding:10px 18px;
+
+    border:none;
+    border-radius:8px;
+
+    background:#EA454C;
+    color:white;
+
+    cursor:pointer;
+}
+
+.btn-add:hover{
+    background:#d63a40;
+}
+
+.btn-huy{
+    padding:10px 18px;
+
+    border:none;
+    border-radius:8px;
+
+    background:#ddd;
+    color:#333;
+
+    cursor:pointer;
+}
+
+.btn-huy:hover{
+    background:#ccc;
+}
+
+/* ADDRESS LIST */
+
+.address-card{
+    background:white;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+
+    transition:.25s;
+}
+
+.address-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* text */
+
+.address-card p{
+    margin:4px 0;
+    color:#555;
+}
+
+/* name */
+
+.address-card p:first-child{
+    font-weight:600;
+    color:#222;
+}
+
+/* default badge */
+
+.default-badge{
+    margin-left:10px;
+
+    background:#27ae60;
+    color:white;
+
+    font-size:11px;
+    font-weight:600;
+
+    padding:3px 8px;
+
+    border-radius:12px;
+}
+
+/* buttons */
+
+.card-actions{
+    margin-top:12px;
+
+    display:flex;
+    gap:10px;
+}
+
+.card-actions button{
+    padding:6px 14px;
+
+    border:none;
+    border-radius:6px;
+
+    font-size:13px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.card-actions button:first-child{
+    background:#3498db;
+    color:white;
+}
+
+.card-actions button:first-child:hover{
+    background:#2980b9;
+}
+
+.card-actions button:last-child{
+    background:#e74c3c;
+    color:white;
+}
+
+.card-actions button:last-child:hover{
+    background:#c0392b;
+}
+
+/* animation */
+
+@media (max-width:900px){
+
+    .address-page{
+        padding:40px 20px;
+    }
+
+    .address-info{
+        width:100%;
+    }
+}
