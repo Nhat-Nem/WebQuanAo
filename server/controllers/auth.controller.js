@@ -163,6 +163,7 @@ exports.login = async (req, res) => {
 
         user.country = country
         user.city = city
+        user.lastActivate = new Date()
         await user.save()
 
         const day = rememberMe ? 30 : 3
