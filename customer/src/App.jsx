@@ -76,6 +76,16 @@ function App() {
       .catch(() => setCart([]))
   }, [])
 
+  useEffect(() => {
+    api.post('/ping').catch(() => {})
+
+    const interval = setInterval(() => {
+      api.post('/ping').catch(() => {})
+    }, 30000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <>
       <BrowserRouter>
