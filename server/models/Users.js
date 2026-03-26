@@ -11,7 +11,8 @@ const userSchema = new mongoose.Schema({
     city: {type: String},
 
     resetPasswordToken: String, 
-    resetPasswordExpire: Date
+    resetPasswordExpire: Date,
+    lastActivate: Date
 }, {timestamps: true})
 
 module.exports = mongoose.model('Users', userSchema)
