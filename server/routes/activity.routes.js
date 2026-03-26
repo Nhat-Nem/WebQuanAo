@@ -2,14 +2,13 @@ const express = require("express")
 const router = express.Router()
 const Users = require("../models/Users")
 
-router.post("/ping", async (req, res) => {
+router.post("/", async (req, res) => {
     try {
         if (!req.user) return res.sendStatus(401)
 
         await Users.findByIdAndUpdate(req.user.id, {
             lastActivate: new Date()
         })
-
         res.sendStatus(200)
     } catch (err) {
         console.log(err)
