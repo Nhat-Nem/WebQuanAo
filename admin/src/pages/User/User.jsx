@@ -162,7 +162,7 @@ function User() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            api.get("/ping") // endpoint nhẹ
+            api.get("/ping") 
         }, 30000) // 30s
 
         return () => clearInterval(interval)
