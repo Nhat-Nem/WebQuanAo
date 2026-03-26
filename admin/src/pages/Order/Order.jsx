@@ -176,22 +176,26 @@ function Order() {
                                         <td> {new Date(order.createdAt).toLocaleString('vi-VN')} </td>
 
                                         <td>
-                                            {order.status !== 'completed' &&
-                                            order.status !== 'cancelled' ? (
-                                                <select value={order.status} 
-                                                        onClick={(e) => e.stopPropagation()}
-                                                        onChange={(e) => {
-                                                            e.stopPropagation()
-                                                            updateStatus(order._id, e.target.value)}}>
+                                            {['completed', 'cancelled'].includes(order.status) ? (
+                                                <span>
+                                                    🔒 Locked
+                                                </span>
+                                            ) : (
+                                                <select
+                                                    value={order.status}
+                                                    onClick={(e) => e.stopPropagation()}
+                                                    onChange={(e) => {
+                                                        e.stopPropagation()
+                                                        updateStatus(order._id, e.target.value)
+                                                    }}
+                                                >
                                                     <option value="pending"> Đang chờ </option>
                                                     <option value="confirmed"> Xác nhận </option>
                                                     <option value="shipping"> Đang giao </option>
                                                     <option value="completed"> Hoàn thành </option>
                                                     <option value="cancelled"> Từ chối </option>
-                                                </select>   
-                                            ) : (<span className={`locked-pill ${order.status}`}>
-                                                    🔒 {order.status === 'completed' ? "Hoàn thành" : "Huỷ"} (Locked)
-                                                </span>)}
+                                                </select>
+                                            )}
                                         </td>
                                     </tr>
 

@@ -4,6 +4,7 @@ import api from "../../services/api";
 import './ProductDetail.css'
 import { PhotoProvider, PhotoView } from 'react-photo-view'
 import 'react-photo-view/dist/react-photo-view.css'
+import { ADMIN_URL } from "../../../../admin/src/services/config";
 
 function ProductDetail({ setCart }) {
     const navigate = useNavigate()
@@ -12,6 +13,12 @@ function ProductDetail({ setCart }) {
     const [mainImage, setMainImage] = useState("")
     const [selectedSize, setSelectedSize] = useState('S')
     const [related, setRelated] = useState([])
+
+    const [user, setUser] = useState(null)
+
+    useEffect(() => {
+        api.get('/auth/me').then(res => setUser(res.data))
+    }, [])
 
     useEffect(() => {
         api.get(`/products/related/${id}`).then(res => setRelated(res.data)).catch(err => console.log(err))
@@ -103,14 +110,26 @@ function ProductDetail({ setCart }) {
                         </div>
                     </div>
 
-                    <button className="add-btn" onClick={addtocart}>
-                        THÊM VÀO GIỎ
-                    </button>
+                    {user?.isAdmin === true ? (
+                        <>
+                            <button className="buy-btn" onClick={() => {
+                                    window.open(`${ADMIN_URL}products`, "_blank")
+                                }}>
+                                    Quản lý sản phẩm
+                            </button>
+                        </>
+                    
+                    ) : (
+                        <>
+                            <button className="add-btn" onClick={addtocart}>
+                                THÊM VÀO GIỎ
+                            </button>
 
-                    <button className="buy-btn" onClick={buyNow}>
-                        MUA NGAY
-                    </button>
-
+                            <button className="buy-btn" onClick={buyNow}>
+                                MUA NGAY
+                            </button>
+                        </>
+                    )}
                     <div className="product-extra">
                         <h3>Chi tiết sản phẩm</h3>
                         <ul>

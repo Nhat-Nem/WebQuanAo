@@ -14,11 +14,18 @@ function User() {
     const [sortOrder, setSortOrder] = useState("asc")
 
     const filteredUsers = useMemo(() => {
-        return users.filter(user =>
-            (user.firstname || "").toLowerCase().includes(search.toLowerCase()) ||
-            (user.lastname || "").toLowerCase().includes(search.toLowerCase()) ||
-            (user.email || "").toLowerCase().includes(search.toLowerCase())
-        )
+        const keyword = search.trim().toLowerCase()
+
+        return users.filter(user => {
+            const fullName = `${user.firstname || ""} ${user.lastname || ""}`.toLowerCase()
+
+            return (
+                fullName.includes(keyword) ||
+                (user.firstname || "").toLowerCase().includes(keyword) ||
+                (user.lastname || "").toLowerCase().includes(keyword) ||
+                (user.email || "").toLowerCase().includes(keyword)
+            )
+        })
     }, [users, search])
 
     const sortedUsers = useMemo(() => {

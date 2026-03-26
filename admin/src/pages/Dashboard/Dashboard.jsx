@@ -9,6 +9,16 @@ function Dashboard() {
     const [chartData, setChartData] = useState([])
     const [recentOrders, setRecentOrders] = useState([])
 
+    const formatCurrency = (value) => {
+        if (value >= 1_000_000) {
+            return (value / 1_000_000).toFixed(value % 1_000_000 === 0 ? 0 : 2) + "M"
+        }
+        if (value >= 1_000) {
+            return (value / 1_000).toFixed(0) + "K"
+        }
+        return value
+    }
+
     const statusText = {
         pending: "Chờ xác nhận",
         confirmed: "Đã xác nhận",
@@ -62,8 +72,8 @@ function Dashboard() {
                         <LineChart data={chartData}>
                             <CartesianGrid strokeDasharray="3 3" />
                             <XAxis dataKey="month" />
-                            <YAxis tickFormatter={(value) => value.toLocaleString('vi-VN')} />
-                            <Tooltip formatter={(value) => value.toLocaleString('vi-VN') + "₫"} />
+                            <YAxis tickFormatter={formatCurrency} />
+                            <Tooltip formatter={(value) => formatCurrency(value) + "₫"} />
                             <Line type="monotone" dataKey="total" stroke="#4f46e5" strokeWidth={3} dot={{r:5}} />
                         </LineChart>
                     </ResponsiveContainer>
