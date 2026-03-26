@@ -12,8 +12,8 @@ function User() {
     const [users, setUsers] = useState([])
     const [sortField, setSortField] = useState("")
     const [sortOrder, setSortOrder] = useState("asc")
-
-    const filteredUsers = useMemo(() => {
+    
+    const filteredUsers = useMemo(() => {   
         const keyword = search.trim().toLowerCase()
 
         return users.filter(user => {
@@ -71,7 +71,6 @@ function User() {
     }, [])
 
     useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
         setPage(1)
     }, [search])
 
@@ -148,6 +147,27 @@ function User() {
         }
     }
 
+    //lastActivate func
+    const getLastActivityStatus = (user) => {
+        if (!user.lastActivate) return "Chưa hoạt động"
+
+        // eslint-disable-next-line react-hooks/purity
+        const diff = Date.now() - new Date(user.lastActivate)
+
+        if (diff < 60 * 1000) return "Online"
+        if (diff < 5 * 60 * 1000) return "Activate"
+        if (diff < 60 * 60 * 1000) return `${Math.floor(diff/60000)} phút trước`
+        if (diff < 24 * 60 * 60 * 1000) return `${Math.floor(diff/3600000)} giờ trước`
+    }
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            api.get("/ping") // endpoint nhẹ
+        }, 30000) // 30s
+
+        return () => clearInterval(interval)
+    }, [])
+
     return (
         <div className="users-page">
             <div className="users-header">
@@ -175,6 +195,8 @@ function User() {
                             Role {sortField === 'isAdmin' && (sortOrder === "asc" ? "↑" : "↓")}
                         </th>
 
+                        <th> Activity </th>
+
                         <th>Hành động</th>
                     </tr>
                 </thead>
@@ -199,6 +221,17 @@ function User() {
                                 <td>
                                     <span className={`role-badge ${user.isAdmin ? 'admin' : 'user'}`} onClick={() => toggleRole(user._id, user.isAdmin)} >
                                         {user.isAdmin ? "Admin" : "User"}
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span className={
+                                        // eslint-disable-next-line react-hooks/purity
+                                        Date.now() - new Date(user.lastActive) < 60000
+                                            ? "online"
+                                            : "offline"
+                                    }>
+                                        {getLastActivityStatus(user)}
                                     </span>
                                 </td>
                                 

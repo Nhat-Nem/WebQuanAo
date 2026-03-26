@@ -5,7 +5,7 @@ const cors = require('cors')
 const connectDB = require('./config/db')
 const productRoutes = require("./routes/product.routes")
 const cookieParser = require('cookie-parser')
-
+const verifyToken = require('./middlewares/authMiddleware')
 const app = express()
 
 //middleware
@@ -61,6 +61,9 @@ app.use('/api/order', orderroutes)
 //banner
 const bannerroutes = require('./routes/banner.routes')
 app.use('/api/banner', bannerroutes)
+
+//ping
+app.use('/api/ping', verifyToken, require('./routes/activity.routes') )
 
 //listen
 const PORT = process.env.PORT || 3000

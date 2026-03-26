@@ -123,3 +123,12 @@ tr.admin-row{
     font-size:12px;
     margin-left:4px;
 }
+
+.online {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.offline {
+    color: #95a5a6;
+}
