@@ -8,8 +8,20 @@ import User from './pages/User/User'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Banner from './pages/Banner/Banner'
+import api from './services/api'
+import { useEffect } from "react"
 
 function App() {
+  useEffect(() => {
+      api.post('/ping').catch(() => {})
+  
+      const interval = setInterval(() => {
+        api.post('/ping').catch(() => {})
+      }, 30000)
+  
+      return () => clearInterval(interval)
+    }, [])
+
   return (
     <>
       <BrowserRouter>
