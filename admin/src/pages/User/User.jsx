@@ -71,6 +71,19 @@ function User() {
     }, [])
 
     useEffect(() => {
+        const interval = setInterval(async () => {
+            try {
+                const res = await api.get("/admin/users")
+                setUsers(res.data)
+            } catch (err) {
+                console.log(err)
+            }
+        }, 10000) // 10s
+
+        return () => clearInterval(interval)
+    }, [])
+
+    useEffect(() => {
         setPage(1)
     }, [search])
 
@@ -148,21 +161,33 @@ function User() {
     }
 
     //lastActivate func
+    // eslint-disable-next-line react-hooks/purity
+    const [now, setNow] = useState(Date.now())
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setNow(Date.now())
+        }, 10000)
+
+        return () => clearInterval(interval)
+    }, [])
+
     const getLastActivityStatus = (user) => {
         if (!user.lastActivate) return "Chưa hoạt động"
 
-        // eslint-disable-next-line react-hooks/purity
-        const diff = Date.now() - new Date(user.lastActivate)
+
+        const diff = now - new Date(user.lastActivate)
 
         if (diff < 60 * 1000) return "Online"
-        if (diff < 5 * 60 * 1000) return "Activate"
         if (diff < 60 * 60 * 1000) return `${Math.floor(diff/60000)} phút trước`
         if (diff < 24 * 60 * 60 * 1000) return `${Math.floor(diff/3600000)} giờ trước`
     }
 
+
+
     useEffect(() => {
         const interval = setInterval(() => {
-            api.get("/ping") 
+            api.post("/ping") 
         }, 30000) // 30s
 
         return () => clearInterval(interval)
@@ -226,8 +251,7 @@ function User() {
 
                                 <td>
                                     <span className={
-                                        // eslint-disable-next-line react-hooks/purity
-                                        Date.now() - new Date(user.lastActive) < 60000
+                                        now - new Date(user.lastActivate) < 60000
                                             ? "online"
                                             : "offline"
                                     }>
