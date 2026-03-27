@@ -2,7 +2,6 @@ import './Profile.css'
 import api from '../../services/api'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ADMIN_URL } from '../../../../admin/src/services/config'
 import useTitle from '../../hooks/useTitle'
 import Swal from 'sweetalert2'
 import Pagination from "../../components/Panigation/Panigation"
@@ -208,7 +207,7 @@ function Profile() {
                         )}    
                         {user.isAdmin && (
                             <button onClick={() => {const token = localStorage.getItem('token') || sessionStorage.getItem('token')
-                                    window.open(`${ADMIN_URL}?token=${token}`, "_blank")}}>
+                                    window.open(`${import.meta.env.VITE_ADMIN_URL}?token=${token}`, "_blank")}}>
                                 Quản lý sản phẩm
                             </button>
                         )}
