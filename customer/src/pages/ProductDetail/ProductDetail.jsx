@@ -4,7 +4,6 @@ import api from "../../services/api";
 import './ProductDetail.css'
 import { PhotoProvider, PhotoView } from 'react-photo-view'
 import 'react-photo-view/dist/react-photo-view.css'
-import { ADMIN_URL } from "../../../../admin/src/services/config";
 
 function ProductDetail({ setCart }) {
     const navigate = useNavigate()
@@ -113,7 +112,7 @@ function ProductDetail({ setCart }) {
                     {user?.isAdmin === true ? (
                         <>
                             <button className="buy-btn" onClick={() => {
-                                    window.open(`${ADMIN_URL}products`, "_blank")
+                                    window.open(`${import.meta.env.VITE_ADMIN_URL}/products`, "_blank")
                                 }}>
                                     Quản lý sản phẩm
                             </button>

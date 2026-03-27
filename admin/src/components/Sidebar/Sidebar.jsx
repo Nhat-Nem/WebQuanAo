@@ -32,7 +32,7 @@ function Sidebar() {
 
         try {
             await api.post("/auth/logout")
-            window.open("http://localhost:5173/", "_blank")
+            window.open(`${import.meta.env.VITE_CLIENT_URL}`, "_blank")
         } catch (error) {
             console.log(error)
         }
@@ -73,7 +73,7 @@ function Sidebar() {
                 </div>
 
                 <a 
-                    href="http://localhost:5173/"
+                    href= {import.meta.env.VITE_CLIENT_URL}
                     className="store-link"
                     target="_blank"
                     rel="noopener noreferrer"

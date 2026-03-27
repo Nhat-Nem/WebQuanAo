@@ -168,7 +168,7 @@ function Products() {
             images: product.images || []
         })
 
-        setImagePreview(`http://localhost:5050/products/${product.image}`)
+        setImagePreview(`${import.meta.env.VITE_SERVER_STATIC}/products/${product.image}`)
         setShowEdit(true)
     }
 
@@ -249,7 +249,7 @@ function Products() {
                             {filterProduct.map((product, index) => (
                                 <tr key = {product._id}>
                                     <td> {(page - 1) * 20 + index + 1} </td>
-                                    <td><img src={`http://localhost:5050/products/${product.image}`} alt={product.name} className='product-img'/></td>
+                                    <td><img src={`${import.meta.env.VITE_SERVER_STATIC}/products/${product.image}`} alt={product.name} className='product-img'/></td>
                                     <td>{product.name}</td>
                                     <td>{(product.price).toLocaleString('vi-VN')}₫</td>
                                     <td>
@@ -371,7 +371,7 @@ function Products() {
                                 <div className="image-grid">
                                     {formData.images.map((img, i) => (
                                         <div key={i} className="image-item">
-                                            <img src={img instanceof File ? URL.createObjectURL(img) : `http://localhost:5050/products/${img}`} />
+                                            <img src={img instanceof File ? URL.createObjectURL(img) : `${import.meta.env.VITE_SERVER_STATIC}/products/${img}`} />
                                             <button className='remove-img' type='button' onClick={() => {
                                                 const imgToDelete = formData.images[i]
                                                 const newImgs = [...formData.images]

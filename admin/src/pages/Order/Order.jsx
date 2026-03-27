@@ -208,7 +208,7 @@ function Order() {
                                                             <div key={i} className="detail-item">
 
                                                                 <img
-                                                                    src={`http://localhost:5050/products/${item.product?.image}`}
+                                                                    src={`${import.meta.env.VITE_SERVER_STATIC}/products/${item.product?.image}`}
                                                                     alt={item.product?.name}
                                                                     className="detail-img"
                                                                 />

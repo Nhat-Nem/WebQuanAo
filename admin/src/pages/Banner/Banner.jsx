@@ -142,7 +142,7 @@ function Banner() {
             active: banner.active
         })
 
-        setPreview(`http://localhost:5050/public/banners/${banner.image}`)
+        setPreview(`${import.meta.env.VITE_SERVER_STATIC}/public/banners/${banner.image}`)
 
         setShowForm(true)
     }
@@ -232,7 +232,7 @@ function Banner() {
                                     <td> {i + 1} </td>
 
                                     <td>
-                                        <img src={`http://localhost:5050/public/banners/${banner.image}`} width={"120"} />
+                                        <img src={`${import.meta.env.VITE_SERVER_STATIC}/public/banners/${banner.image}`} width={"120"} />
                                     </td>
 
                                     <td> {banner.title} </td>
