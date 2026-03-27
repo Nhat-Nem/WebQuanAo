@@ -13,6 +13,8 @@ function Header({ cart }) {
     const [isLogin, setIsLogin] = useState(false)
     const [isAdmin, setIsAdmin] = useState(false)
 
+    const [openMenu, setOpenMenu] = useState(false)
+
     useEffect(() => {
         const checkLogin = async () => {
             try {
@@ -44,6 +46,10 @@ function Header({ cart }) {
 
     const handleChange = (e) => {
         setInputValue(e.target.value)
+    }
+
+    const toggleMenu = () => {
+        setOpenMenu(prev => !prev)
     }
 
     const handleSearch = () => {
@@ -78,6 +84,10 @@ function Header({ cart }) {
     return (
         <header className='header'>
 
+            <div className="menu-toggle" onClick={toggleMenu}>
+                <i className='fa-solid fa-bars'></i>
+            </div>
+
             <div className="logo">
                 <img
                     src={logoVLu}
@@ -87,13 +97,13 @@ function Header({ cart }) {
                 />
             </div>
 
-            <nav className="navi">
-                <Link to='/' onClick={handleHome}>Tất cả sản phẩm</Link>
-                <Link to='/category/ao'>Áo</Link>
-                <Link to='/category/ao-khoac'>Áo khoác - Hoodie</Link>
-                <Link to='/category/quan'>Quần</Link>
-                <Link to='/category/phu-kien'>Phụ kiện</Link>
-                <Link to='/about-us'>About Us</Link>
+            <nav className={`navi ${openMenu ? "active" : ""}`}>
+                <Link to='/' onClick={() => {handleHome, setOpenMenu(false)}} >Tất cả sản phẩm</Link>
+                <Link to='/category/ao' onClick={() => setOpenMenu(false)} >Áo</Link>
+                <Link to='/category/ao-khoac' onClick={() => setOpenMenu(false)} >Áo khoác - Hoodie</Link>
+                <Link to='/category/quan' onClick={() => setOpenMenu(false)} >Quần</Link>
+                <Link to='/category/phu-kien' onClick={() => setOpenMenu(false)} >Phụ kiện</Link>
+                <Link to='/about-us' onClick={() => setOpenMenu(false)} >About Us</Link>
             </nav>
 
             <div className="right">

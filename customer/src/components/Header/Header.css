@@ -197,11 +197,6 @@ body{
 /* animation */
 
 @media (max-width:1000px){
-
-    .navi{
-        display:none;
-    }
-
     .tim-kiem input{
         width:170px;
     }
@@ -215,5 +210,46 @@ body{
 
     .tim-kiem{
         display:none;
+    }
+}
+
+/* menu */
+.menu-toggle{
+    display:none;
+    font-size:22px;
+    cursor:pointer;
+}
+
+@media (max-width:1000px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .navi{
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+
+        background:white;
+
+        flex-direction:column;
+        gap:0;
+
+        overflow:hidden;
+        max-height:0;
+
+        transition:max-height .3s ease;
+        box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .navi a{
+        padding:15px 20px;
+        border-bottom:1px solid #eee;
+    }
+
+    .navi.active{
+        max-height:400px; /* mở menu */
     }
 }
