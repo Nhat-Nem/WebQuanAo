@@ -1,17 +1,19 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL,
+    baseURL: import.meta.env.VITE_API,
     withCredentials: true
 })
 
 api.interceptors.response.use(
     res => res,
     err => {
+
         if (err.response?.status === 401 && 
             !err.config.url.includes("/auth/me")) {
             console.log("Not authenticated")
         }
+
         return Promise.reject(err)
     }
 )
