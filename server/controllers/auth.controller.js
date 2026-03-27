@@ -220,7 +220,7 @@ exports.forgotPassword = async (req, res) => {
 
         await user.save()
 
-        const resetUrl = `http://localhost:5173/reset-password/${resetToken}`
+        const resetUrl = `${process.env.CLIENT_URL}/reset-password/${resetToken}`
 
         await resend.emails.send({
             from: "onboarding@resend.dev",
