@@ -8,7 +8,7 @@ function AboutUs() {
     return (
         <>  
             <div className="about-page">
-                <h1>Bài này của nhóm: Lợi, Nam, Kiệt</h1>
+                <h1>Chưa nghĩ ra</h1>
             </div>
         </>
     )
