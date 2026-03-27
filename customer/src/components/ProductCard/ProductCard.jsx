@@ -2,12 +2,11 @@ import '../ProductCard/ProductCard.css'
 import { Link } from 'react-router-dom'
 
 function ProductCard({product}) {
-
     return (
         <div className="product-card">
             <Link to={`/product/${product._id}`}>
                 <div className="product-img">
-                    <img src={`http://localhost:5050/products/${product.image}`}/>
+                    <img src={`${import.meta.env.VITE_SERVER_STATIC}/products/${product.image}`}/>
                 </div>
             </Link>
             

@@ -68,7 +68,7 @@ function Dashboard({setCart}) {
                     {banners.length > 0 && (
                         <Link to={banners[currentBanner].link}>
                             <img
-                                src={`http://localhost:5050/public/banners/${banners[currentBanner].image}`}
+                                src={`${import.meta.env.VITE_SERVER_STATIC}/public/banners/${banners[currentBanner].image}`}
                                 alt={banners[currentBanner].title}
                             />
                         </Link>

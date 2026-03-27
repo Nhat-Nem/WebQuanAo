@@ -120,7 +120,7 @@ function Cart({cart, setCart}) {
                             <tbody>
                                 {cart.map(item => (
                                     <tr key={item._id}>
-                                        <td><img src={`http://localhost:5050/products/${item.product.image}`} /></td>
+                                        <td><img src={`${import.meta.env.VITE_SERVER_STATIC}/products/${item.product.image}`} /></td>
                                         <td>
                                             <div className="cart-product-info">
                                                 <div className="cart-product-name">

@@ -169,7 +169,7 @@ function Checkout() {
                     {cart.map(item => (
                         <div key={item._id || item.product._id} className="order-product">
                             <div className="product-info">
-                                <img src={`http://localhost:5050/products/${item.product.image}`} />
+                                <img src={`${import.meta.env.VITE_SERVER_STATIC}/products/${item.product.image}`} />
                                 <div>
                                     <p>{item.product.name}</p>
 

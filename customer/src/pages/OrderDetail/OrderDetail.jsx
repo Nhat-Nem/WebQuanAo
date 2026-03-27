@@ -52,7 +52,7 @@ function OrderDetail() {
                     {order.items.map(item => (
                         <div key={item._id} className='product'>
 
-                            <img src={`http://localhost:5050/products/${item.product.image}`} alt={item.product.name}/>
+                            <img src={`${import.meta.env.VITE_SERVER_STATIC}/products/${item.product.image}`} alt={item.product.name}/>
 
                             <div>
                                 <p>{item.product.name}</p>

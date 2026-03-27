@@ -82,15 +82,15 @@ function ProductDetail({ setCart }) {
                 {/* left */}
                 <div className="detail-left">
                     <PhotoProvider>
-                        <PhotoView src={`http://localhost:5050/products/${mainImage}`}>
-                            <img src={`http://localhost:5050/products/${mainImage}`} className="product-img" />
+                        <PhotoView src={`${import.meta.env.VITE_SERVER_STATIC}/products/${mainImage}`}>
+                            <img src={`${import.meta.env.VITE_SERVER_STATIC}/products/${mainImage}`} className="product-img" />
                         </PhotoView>
                     </PhotoProvider>
 
                     <div className="thumb-list">
                         {[product.image, ...(product.images || [])].map((img, index) => (
                             <img key={index}
-                                src={`http://localhost:5050/products/${img}`}
+                                src={`${import.meta.env.VITE_SERVER_STATIC}/products/${img}`}
                                 className={mainImage === img ? "thumb active" : "thumb"}
                                 onClick={() => setMainImage(img)} />
                         ))}
@@ -142,7 +142,7 @@ function ProductDetail({ setCart }) {
                         <h3>Size Chart</h3>
                         <p>Mẫu nữ  cao 1m58 nặng 48kg mặc sản phẩm size S.</p>
                         <p>Mẫu nữ cao 1m58 nặng 44kg mặc sản phẩm size S.</p>
-                        <img src={`http://localhost:5050/public/sizechart.png`} />
+                        <img src={`${import.meta.env.VITE_SERVER_STATIC}/public/sizechart.png`} />
                     </div>
                 </div>
             </div>
@@ -157,7 +157,7 @@ function ProductDetail({ setCart }) {
                             to={`/product/${p._id}`} 
                             className="related-item"
                         >
-                            <img src={`http://localhost:5050/products/${p.image}`} />
+                            <img src={`${import.meta.env.VITE_SERVER_STATIC}/products/${p.image}`} />
 
                             <p className="name">{p.name}</p>
 
