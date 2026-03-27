@@ -1,4 +1,4 @@
-import Sidebar from './components/Sidebar/sidebar'
+import Sidebar from './components/Sidebar/Sidebar'
 import AdminLayout from './layouts/AdminLayout'
 import Dashboard from './pages/Dashboard/Dashboard'
 import Products from './pages/Products/Products'
