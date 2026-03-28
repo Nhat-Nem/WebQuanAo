@@ -132,3 +132,80 @@ tr.admin-row{
 .offline {
     color: #95a5a6;
 }
+
+@media (max-width: 768px) {
+    .users-page {
+        padding: 15px 10px;
+    }
+
+    .users-page h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .users-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .user-search {
+        width: 100%;
+    }
+
+    /* Table */
+    .users-page table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        font-size: 12px;
+    }
+
+    .users-page th,
+    .users-page td {
+        padding: 8px 10px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .delete-btn {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .role-badge {
+        padding: 2px 6px;
+        font-size: 11px;
+    }
+
+    .users-count {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .users-page h2 {
+        font-size: 16px;
+    }
+
+    .users-page th,
+    .users-page td {
+        padding: 6px 8px;
+        font-size: 11px;
+    }
+
+    .user-search {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+
+    .delete-btn {
+        padding: 3px 6px;
+        font-size: 11px;
+    }
+
+    .role-badge {
+        padding: 2px 5px;
+        font-size: 10px;
+    }
+}

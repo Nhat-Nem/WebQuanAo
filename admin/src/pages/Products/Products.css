@@ -413,3 +413,107 @@
     z-index:10;
 }
 
+
+@media (max-width: 768px) {
+    /* Container */
+    .products-container {
+        padding: 0 10px;
+    }
+
+    /* Header */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 10px;
+        gap: 10px;
+    }
+
+    /* Button add sản phẩm */
+    .add-btn {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    /* Table */
+    .products-container table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        font-size: 12px;
+    }
+
+    .products-container th,
+    .products-container td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    /* Modal */
+    .modal {
+        width: 90%;
+        padding: 20px;
+    }
+
+    /* Form input */
+    .modal input,
+    .modal select {
+        font-size: 14px;
+    }
+
+    /* Image preview */
+    .modal .image-preview img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Edit layout modal */
+    .edit {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .edit .image-preview img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Filter */
+    .filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .filters input,
+    .filters select {
+        width: 100%;
+    }
+
+    .size-row {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .size-row input {
+        width: 100%;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(auto-fill, 60px);
+        gap: 6px;
+    }
+
+    .image-item {
+        width: 60px;
+        height: 60px;
+    }
+
+    .remove-img {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+        top: -6px;
+        right: -6px;
+    }
+}

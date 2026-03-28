@@ -328,3 +328,78 @@
     color:#666;
     font-size:14px;
 }
+
+@media (max-width: 1000px){
+    .order-page{
+        padding:15px;
+    }
+
+    .filter{
+        flex-direction: column;
+        align-items: flex-start;
+        gap:10px;
+        padding:12px;
+    }
+
+    .filter input[type="text"]{
+        width:100%;
+        margin-left:0;
+    }
+
+    .order-wrapper{
+        overflow-x:auto;
+    }
+
+    .order-page table{
+        display:block;
+        width:100%;
+    }
+
+    .order-page th,
+    .order-page td{
+        white-space: nowrap;
+        font-size:12px;
+        padding:8px;
+    }
+
+    .detail-item{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .detail-img{
+        width:50px;
+        height:50px;
+    }
+
+    .order-page select{
+        font-size:12px;
+        padding:4px 6px;
+    }
+}
+
+@media (max-width: 600px){
+    .filter{
+        padding:10px;
+    }
+
+    .order-page th,
+    .order-page td{
+        font-size:11px;
+        padding:6px 4px;
+    }
+
+    .badge{
+        font-size:11px;
+        padding:4px 8px;
+    }
+
+    .locked-pill{
+        padding:4px 10px;
+        font-size:11px;
+    }
+
+    .order-count{
+        font-size:12px;
+    }
+}

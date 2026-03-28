@@ -267,3 +267,60 @@ input:checked + .slider:before{
     background:#e7f1ff;
     color:#1d4ed8;
 }
+
+@media (max-width: 1000px){
+    .banner-page {
+        padding: 15px;
+    }
+
+    .banner-header h2{
+        font-size: 20px;
+    }
+
+    .banner-header button{
+        padding:6px 12px;
+        font-size:14px;
+    }
+
+    /* table responsive */
+    .banner-content table{
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .banner-content table th,
+    .banner-content table td{
+        padding:8px;
+        font-size:12px;
+        white-space: nowrap;
+    }
+
+    .banner-content img{
+        width: 80px;
+        height: 40px;
+    }
+
+    /* modal form responsive */
+    .modal{
+        width: 90%; /* giảm theo % màn hình */
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 600px){
+    .banner-header{
+        flex-direction: column;
+        gap:10px;
+        align-items: flex-start;
+    }
+
+    .banner-header button{
+        width: 100%;
+    }
+
+    .status-toggle{
+        flex-direction: column;
+        gap:5px;
+    }
+}
