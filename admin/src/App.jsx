@@ -11,7 +11,22 @@ import Banner from './pages/Banner/Banner'
 import api from './services/api'
 import { useEffect } from "react"
 
+function useAdminTokenFromURL() {
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
+    if (token) {
+      localStorage.setItem("token", token);
+      // Xóa query để không thấy trên URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, []);
+}
+
 function App() {
+
+  useAdminTokenFromURL()
+
   useEffect(() => {
       api.post('/ping').catch(() => {})
   

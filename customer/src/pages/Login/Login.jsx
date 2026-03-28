@@ -13,10 +13,17 @@ function Login() {
         e.preventDefault();
 
         try {
-            await api.post("/auth/login", { username, password, rememberMe });
-
-            alert("Login thành công");
-            window.location.replace("/");
+            const res = await api.post("/auth/login", { username, password, rememberMe });
+            const token = res.data.token
+            if (token) {
+                localStorage.setItem('token', token)
+                alert("login thành cong")
+                window.location.replace('/')
+            } else {
+                alert("k nhan dc token")
+            }
+            // alert("Login thành công");
+            // window.location.replace("/");
         } catch (error) {
             console.error(error.response?.data);
             alert("Login thất bại");

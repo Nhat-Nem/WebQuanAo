@@ -65,7 +65,7 @@ function Profile() {
 
         try {
             await api.post('/auth/logout')
-
+            localStorage.removeItem("token")
             await Swal.fire({
                 icon: "success",
                 title: "Đã đăng xuất",

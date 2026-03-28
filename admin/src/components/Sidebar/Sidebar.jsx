@@ -32,6 +32,7 @@ function Sidebar() {
 
         try {
             await api.post("/auth/logout")
+            localStorage.removeItem('token')
             window.open(`${import.meta.env.VITE_CLIENT_URL}`, "_blank")
         } catch (error) {
             console.log(error)

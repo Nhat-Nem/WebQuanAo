@@ -174,14 +174,14 @@ exports.login = async (req, res) => {
             { expiresIn: `${day}d` }
         )
 
-        res.cookie("token", token, {
-            httpOnly: true,
-            secure: true,
-            sameSite: "none",
-            maxAge: day * 24 * 60 * 60 * 1000
-        })
+        // res.cookie("token", token, {
+        //     httpOnly: true,
+        //     secure: true,
+        //     sameSite: "none",
+        //     maxAge: day * 24 * 60 * 60 * 1000
+        // })
 
-        res.status(200).json({message: "Đăng nhập thành công"})
+        res.status(200).json({message: "Đăng nhập thành công", token})
 
     } catch (error) {
         console.log(error)
