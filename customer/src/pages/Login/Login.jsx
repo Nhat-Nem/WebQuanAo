@@ -13,7 +13,7 @@ function Login() {
         e.preventDefault();
 
         try {
-            await api.post("/auth/login", { username, password, rememberMe });
+            await api.post("/auth/login", { username, password, rememberMe }, { withCredentials: true });
 
             alert("Login thành công");
             window.location.replace("/");
